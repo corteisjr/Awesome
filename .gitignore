@@ -1,5 +1,7 @@
 venv/*
-
-__pycache__/*
-
-/migrations/*
+.venv/
+.env
+media
+__pycache__
+migrations
+.sqlite3
