@@ -2,6 +2,8 @@ from django.db import models
 import uuid
 class Post(models.Model):
     title = models.CharField(max_length=500)
+    artist = models.CharField(max_length=500, null=True)
+    url = models.URLField(max_length=500, null=True)
     image = models.URLField(max_length=500)
     body = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
