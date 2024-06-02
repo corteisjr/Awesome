@@ -32,6 +32,7 @@ def post_create_view(request):
             post.artist = artist
 
             post.save()
+            form.save_m2m()
             return redirect('home')
     return render(request, 'a_posts/post_create.html', {'form': form})
 
