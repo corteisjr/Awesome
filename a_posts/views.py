@@ -33,3 +33,10 @@ def post_create_view(request):
             post.save()
             return redirect('home')
     return render(request, 'a_posts/post_create.html', {'form': form})
+
+def post_delete_view(request, pk):
+    post = Post.objects.get(id=pk)
+    if request.method == 'POST':
+        post.delete()
+        return redirect('home')
+    return render(request, 'a_posts/post_delete.html', {'post':post})
