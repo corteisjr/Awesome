@@ -5,15 +5,13 @@ from bs4 import BeautifulSoup
 from django.contrib import messages
 import requests
 
-def home_view(request):
-    posts = Post.objects.all()
+def home_view(request, tag=None):
+    if tag:
+        posts = Post.objects.filter(tags__slug=tag)
+    else:
+        posts = Post.objects.all()
     
     return render(request, 'a_posts/home.html', {'posts': posts})
-
-def category_view(request, tag):
-    posts = Post.objects.filter(tags__slug=tag)
-    return render(request, 'a_posts/home.html', {'posts': posts})
-
 
 def post_create_view(request):
     form = PostCreateForm()
