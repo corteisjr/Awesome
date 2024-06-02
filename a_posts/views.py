@@ -60,3 +60,8 @@ def post_edit_view(request, pk):
     }
     
     return render(request, 'a_posts/post_edit.html', context=context)
+
+
+def post_page_view(request, pk):
+    post = Post.objects.get(id=pk)
+    return render(request, 'a_posts/post_page.html', {'post':post})
