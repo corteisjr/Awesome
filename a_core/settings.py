@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     # own App
     'a_posts',
+    'a_users',
 ]
 
 MIDDLEWARE = [
