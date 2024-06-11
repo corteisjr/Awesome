@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    # CleanUp
+    'django_cleanup.apps.CleanupConfig',
     # own App
     'a_posts',
     'a_users',
